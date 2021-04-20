@@ -22,8 +22,7 @@ var carDetails = {
 */
 
 //Code Here
-
-
+const { make, color, model, year } = carDetails;
 
 ////////// PROBLEM 2 //////////
 
@@ -33,9 +32,10 @@ var carDetails = {
   The property names are firstName, lastName, and title.
 */
 
-function greeting( obj ) {
+function greeting(obj) {
   //Code Here
-  
+  const { firstName, lastName, title } = obj;
+
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
@@ -55,20 +55,29 @@ function greeting( obj ) {
 
 //Code Here
 
-
+function totalPopulation(obj) {
+  const { utah, california, texas, arizona } = obj;
+  return utah + california + texas + arizona
+}
 
 ////////// PROBLEM 4 //////////
 
 /*
-  Write a function called ingredients that will take in an object. 
-  This object will have 3 properties named carb, fat, and protein. 
-  The property values will be strings. 
-  Use object destructuring to save the property values to new variables. 
-  Push these new variables to an array and return the array. 
+  Write a function called ingredients that will take in an object.
+  This object will have 3 properties named carb, fat, and protein.
+  The property values will be strings.
+  Use object destructuring to save the property values to new variables.
+  Push these new variables to an array and return the array.
 */
 
 //Code Here
 
+function ingredients(obj) {
+  let anArray = []
+  const { carb = '', fat = '', protein = '' } = obj
+  anArray.push(carb, fat, protein)
+  return anArray
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -86,7 +95,17 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+function largeNumbers(object) {
+  const { first, second, third } = object
+  if (first < second && first < third) {
+    return first
+  }
+  else if (second < third && second < first) {
+    return second
+  } else {
+    return third
+  }
+}
 
 
 ////////// PROBLEM 6 //////////
@@ -98,5 +117,15 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+function numberGroups(object) {
+  const { a = [], b = [], c = [] } = object
+  if (a.length > b.length && a.length > c.length) {
+    return a
+  }
+  else if (b.length > a.length && b.length > c.length) {
+    return b
+  } else {
+    return c
+  }
+}
 
